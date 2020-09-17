@@ -28,7 +28,7 @@ jobs:
     - name: copy file tomcat to root folder
       run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war
     - id: step1
-      run: echo "::set-output name=test::ROOT.war"
+      run: echo "::set-output name=test::{ cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT1.war}"
     # - name: install ssh
     #   run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
     # - name: login ssh
