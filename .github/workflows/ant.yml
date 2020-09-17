@@ -23,7 +23,7 @@ jobs:
     - name: Build with Ant
       run: ls && ant -noinput -buildfile build.xml
     - name: copy file tomcat to root folder
-      run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war && ls && cp ROOT.war ROOT1.war && ls
+      run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war && mkdir war && ls
     # - name: install ssh
     #   run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
     # - name: login ssh
