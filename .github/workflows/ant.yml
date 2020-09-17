@@ -28,6 +28,7 @@ jobs:
     - name: Upload math result for job 2
       uses: actions/upload-artifact@v2
       with:
+        name: homework
         path: ROOT.war
     # - name: install ssh
     #   run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
@@ -46,6 +47,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Download math result for job 1
+      uses: actions/download-artifact@v2
+      with:
+        name: homework
     # - name: install ssh
     #   run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
     # - name: login ssh
