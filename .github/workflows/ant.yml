@@ -21,8 +21,12 @@ jobs:
       with:
         java-version: 1.8
     - name: check ls
-      run: ls
+      run: ls && pwd
     - name: check path
       run: pwd
     - name: Build with Ant
       run: ant -noinput -buildfile build.xml
+    - name: copy file tomcat to root folder
+      run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war
+    - name: again check ls
+      run: ls
