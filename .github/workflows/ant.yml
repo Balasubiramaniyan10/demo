@@ -21,7 +21,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Ant
-      run: ls && ant -noinput -buildfile build.xml
+      # run: ls && ant -noinput -buildfile build.xml
+      run: ls && ant clean && ant
     - name: copy file tomcat to root folder
       run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war && mkdir war && ls
     # - name: install ssh
@@ -46,6 +47,7 @@ jobs:
     - name: login ssh
       run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
     - name: copy
-      run: ls && cd /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ && ls && sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT1.war root@82.196.6.114:/root
-    - name: check
-      run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
+      run: ls
+    #   run: ls && cd /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ && ls && sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT1.war root@82.196.6.114:/root
+    # - name: check
+    #   run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
