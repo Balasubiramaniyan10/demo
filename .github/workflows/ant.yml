@@ -26,6 +26,7 @@ jobs:
       run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war
   deploy:
     runs-on: ubuntu-latest
+    steps:
     - name: install ssh
       run: apt-get update && apt-get -y install openssh-client && apt-get -y install sshpass
     - name: login ssh
