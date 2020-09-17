@@ -1,0 +1,51 @@
+# demojob:
+#   stage: build
+#   script:
+#     - echo Building
+#   only:
+#     - master
+
+stages:
+  - build
+  - deploy
+
+build:
+  image: openjdk:8
+  stage: build
+  script:
+    - apt-get update
+    - apt-get -y install ant
+    - echo "Building the war"
+    - ant clean
+    - ant
+    - cp /builds/Balasubiramaniyan/newprojects/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war
+  artifacts:
+    expire_in: 1 week
+    when: always
+    paths:
+      - ROOT.war
+  # only:
+  #   - master
+  
+deploy:
+  stage: release
+  image: ubuntu
+  before_script:
+    - apt-get update
+    - apt-get -y install openssh-client
+    - apt-get -y install sshpass
+  script:
+    # - sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "sudo service tomcat7 stop && cd /var/lib/tomcat7/webapps && ls && rm -f ROOT.war & rm -f -r ROOT && scp ROOT.war root@82.196.6.114:/var/lib/tomcat7/webapps/ && sudo service tomcat7 restart"
+    # below line used for login the ssh server
+    - sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
+    # below lines are used for copy the existing or already generated war file to remote server.  
+    - sshpass -V
+    - export SSHPASS=vino@2020
+    - sshpass -e scp -o stricthostkeychecking=no /builds/Balasubiramaniyan/newprojects/ROOT.war root@82.196.6.114:/root
+    # ls command used to check war file is in project repo
+    - ls
+    # pwd command is used for find the project path
+    - pwd 
+
+  only:
+    - master
