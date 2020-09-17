@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    # - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: install ssh
-      run: apt-get update && apt-get -y install openssh-client && apt-get -y install sshpass
+      run: apt-get update 
     - name: login ssh
       run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
     
