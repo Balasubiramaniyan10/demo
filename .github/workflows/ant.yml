@@ -23,7 +23,7 @@ jobs:
     - name: Build with Ant
       run: ant clean && ant -noinput -buildfile build.xml
     - name: copy file tomcat to root folder
-      run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war
+      run: cp /home/runner/work/demo/demo/apache-tomcat-7.0.105/webapps/ROOT.war ROOT.war
     - name: Upload the war file to deploy
       uses: actions/upload-artifact@v2
       with:
@@ -50,11 +50,13 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: war
-    - name: install ssh
-      run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
-    - name: login ssh
-      run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
-    - name: copy the war file
-      run: sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT.war root@82.196.6.114:/root
-    - name: check
-      run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
+    - name: checking
+      run: ls
+    # - name: install ssh
+    #   run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
+    # - name: login ssh
+    #   run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
+    # - name: copy the war file
+    #   run: sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT.war root@82.196.6.114:/root
+    # - name: check
+    #   run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
