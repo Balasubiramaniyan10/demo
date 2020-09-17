@@ -33,6 +33,6 @@ jobs:
     - name: login ssh
       run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
     - name: copy
-      run: sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT.war root@82.196.6.114:/root
+      run: ls && sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT.war root@82.196.6.114:/root
     - name: check
       run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
