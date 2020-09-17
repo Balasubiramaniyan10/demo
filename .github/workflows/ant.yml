@@ -13,8 +13,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
 
     steps:
     - uses: actions/checkout@v2
@@ -27,8 +25,10 @@ jobs:
       run: ls && ant clean && ant
     - name: copy file tomcat to root folder
       run: cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT.war
-    - id: step1
-      run: echo "::set-output name=test::cp /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ROOT.war ROOT1.war"
+    - name: Upload math result for job 2
+      uses: actions/upload-artifact@v2
+      with:
+        path: ROOT.war
     # - name: install ssh
     #   run: sudo apt-get update && sudo apt-get -y install openssh-client && sudo apt-get -y install sshpass
     # - name: login ssh
@@ -51,7 +51,7 @@ jobs:
     # - name: login ssh
     #   run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
     - name: copy
-      run: ls && ${{needs.build.outputs.output1}}
+      run: ls
     #   run: ls && cd /home/runner/work/demo/demo/apache-tomcat-9.0.37/webapps/ && ls && sshpass -V && export SSHPASS=vino@2020 && sshpass -e scp -o stricthostkeychecking=no /home/runner/work/demo/demo/ROOT1.war root@82.196.6.114:/root
     # - name: check
     #   run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
