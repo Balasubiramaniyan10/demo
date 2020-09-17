@@ -29,7 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install ssh
-      run: sudo apt-get update 
+      run: sudo apt-get update && apt-get -y install openssh-client && apt-get -y install sshpass
     - name: login ssh
       run: sshpass -p vino@2020 ssh -o "StrictHostKeyChecking no" -P root@82.196.6.114 "ls"
     
