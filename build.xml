@@ -4,8 +4,8 @@
 	<!-- Sets variables which can later be used. -->
 	<!-- The value of a property is accessed via ${} -->
 
-	<property name="TOMCAT" value="/home/runner/work/demo/demo/apache-tomcat-7.0.105" />
-	<property name="TOMCAT.LIB" value="/home/runner/work/demo/demo/apache-tomcat-7.0.105/lib" />
+	<property name="TOMCAT" value="/Users/10decoders/Downloads/apache-tomcat-7.0.105" />
+	<property name="TOMCAT.LIB" value="/Users/10decoders/Downloads/apache-tomcat-7.0.105/lib" />
 	<property name="src.dir" value="src" />
 	<property name="resources.dir" value="resources" />
 	<property name="war.file" location="ROOT.war" />
@@ -48,7 +48,7 @@
 	<target name="compile" depends="clean, makedir">
 		<!-- <javac encoding="UTF-8" srcdir="${src.dir}" destdir="${build.dir}"></javac> -->
 
-		<javac debug="true" debuglevel="source,lines,vars" destdir="${build.dir}" includeantruntime="false" source="1.8" target="1.8" encoding="utf-8">
+		<javac debug="true" debuglevel="source,lines,vars" destdir="${build.dir}" includeantruntime="false" source="1.8" target="1.8">
 			<src path="${src.dir}" />
 			<classpath refid="project.classpath" />
 		</javac>

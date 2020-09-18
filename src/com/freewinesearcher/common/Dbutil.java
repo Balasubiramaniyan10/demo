@@ -24,7 +24,7 @@ import org.apache.log4j.jdbcplus.JDBCPoolConnectionHandler;
 import org.apache.log4j.spi.LoggingEvent;
 import org.apache.log4j.spi.TriggeringEventEvaluator;
 //import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
+import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
 
 import com.freewinesearcher.online.housekeeping.BotDetector;
 
@@ -489,9 +489,9 @@ public class Dbutil implements JDBCPoolConnectionHandler {
 		pds.setUsername("vpapp");
 		pds.setPassword("gyh(74%bbGSsw");
 		pds.setUrl(
-				"jdbc:mysql://localhost:3336/wijn?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull");
+				"jdbc:mysql://localhost:3306/wijn?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull");
 		pds.setMaxIdle(150);
-		pds.setMaxWaitMillis(10000);
+		pds.setMaxWait(10000);
 		pds.setTestOnBorrow(true);
 		pds.setTimeBetweenEvictionRunsMillis(60000);
 		pds.setMinEvictableIdleTimeMillis(5 * 60 * 1000);
@@ -509,9 +509,9 @@ public class Dbutil implements JDBCPoolConnectionHandler {
 		pds.setUsername("vpapp");
 		pds.setPassword("gyh(74%bbGSsw");
 		pds.setUrl(
-				"jdbc:mysql://localhost:3336/wijn?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull");
+				"jdbc:mysql://localhost:3306/wijn?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull");
 		pds.setMaxIdle(150);
-		pds.setMaxWaitMillis(10000);
+		pds.setMaxWait(10000);
 		pds.setTestOnBorrow(true);
 		pds.setTimeBetweenEvictionRunsMillis(60000);
 		pds.setMinEvictableIdleTimeMillis(5 * 60 * 1000);
@@ -543,9 +543,9 @@ public class Dbutil implements JDBCPoolConnectionHandler {
 			ds.setUsername("vpapp");
 			ds.setPassword("gyh(74%bbGSsw");
 			ds.setUrl(
-					"jdbc:mysql://localhost:3336/wijn?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=UTF8");
+					"jdbc:mysql://localhost:3306/wijn?jdbcCompliantTruncation=false&zeroDateTimeBehavior=convertToNull&useUnicode=yes&characterEncoding=UTF8");
 			ds.setMaxIdle(150);
-			ds.setMaxWaitMillis(10000);
+			ds.setMaxWait(10000);
 			ds.setTestOnReturn(true);
 			ds.setTestWhileIdle(true);
 			ds.setTestOnBorrow(true);

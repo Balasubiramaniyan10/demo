@@ -70,11 +70,11 @@ The page you requested requires you to log in.<br/>
   </table>
 </form>
 <% if (target.equals("Price Alerts")){ %>
-Not registered yet? Create a new user account <a href="/forum/user/insert.page">here</a>, it just takes 1 minute.<br/><br/>
+Not registered yet? Create a new user account <a href="../account/createaccount.jsp">here</a>, it just takes 1 minute.<br/><br/>
 PriceAlerts inform you of new wines on the market that you have been looking for. You just need to specify what wines you are interested in (and, if you like, at what price). Whenever we find a wine that matches your criteria, we will send you an email with the details of the wine. Or, you can use an RSS reader to receive these notifications. This way, you never miss a good deal again.<br/>
 <br/><img src='/images/PriceAlert.jpg'/>
 <%} else if (target.equals("Shoppinglist")){%>
-Not registered yet? Create a new user account <a href="/forum/user/insert.page" target='_blank'>here</a>, it just takes 1 minute.<br/><br/>
+Not registered yet? Create a new user account <a href="../account/createaccount.jsp" target='_blank'>here</a>, it just takes 1 minute.<br/><br/>
 After registering return to this page and log in to send your shopping list.
 <%} %>
 <%@ include file="/snippets/textpagefooter.jsp" %>
@@ -102,7 +102,7 @@ To create PriceAlerts or change your settings, you have to log in.<br/>
     </tr>
   </table>
 </form>
-Not registered yet? Create a new user account <a href="/forum/user/insert.page">here</a>, it just takes 1 minute.<br/><br/>
+Not registered yet? Create a new user account <a href="../account/createaccount.jsp">here</a>, it just takes 1 minute.<br/><br/>
 PriceAlerts inform you of new wines on the market that you have been looking for. You just need to specify what wines you are interested in (and, if you like, at what price). Whenever we find a wine that matches your criteria, we will send you an email with the details of the wine. Or, you can use an RSS reader to receive these notifications. This way, you never miss a good deal again.<br/>
 <br/><img src='/images/PriceAlert.jpg'> 
 

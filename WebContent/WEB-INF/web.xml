@@ -121,46 +121,46 @@
             <transport-guarantee>NONE</transport-guarantee>
         </user-data-constraint>
     </security-constraint>
-    <security-constraint>
+	<security-constraint>
 		<display-name>Admin area</display-name>
 		<web-resource-collection>
 			<web-resource-name>Protected Area</web-resource-name>
-			Define the context-relative URL(s) to be protected
+			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/admin/*</url-pattern>
-			If you list http methods, only those methods are protected
+			<!-- If you list http methods, only those methods are protected -->
 
 		</web-resource-collection>
 		<auth-constraint>
-			Anyone with one of the listed roles may access this area
+			<!-- Anyone with one of the listed roles may access this area -->
 			<role-name>admin</role-name>
 		</auth-constraint>
-		<user-data-constraint>
+		<!-- <user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
+		</user-data-constraint> -->
 	</security-constraint>
 
-    <security-constraint>
+	<security-constraint>
 		<display-name>Members area</display-name>
 		<web-resource-collection>
 			<web-resource-name>Members area</web-resource-name>
-			Define the context-relative URL(s) to be protected
+			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/settings/*</url-pattern>
-			If you list http methods, only those methods are protected
+			<!-- If you list http methods, only those methods are protected -->
 			<http-method>DELETE</http-method>
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 			<http-method>PUT</http-method>
 		</web-resource-collection>
 		<auth-constraint>
-			Anyone with one of the listed roles may access this area
+			<!-- Anyone with one of the listed roles may access this area -->
 			<role-name>admin</role-name>
 			<role-name>user</role-name>
 			<role-name>shop</role-name>
 		</auth-constraint>
-		<user-data-constraint>
+		<!-- <user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
+		</user-data-constraint> -->
+	</security-constraint> 
 
 	<security-constraint>
 		<display-name>Shop area</display-name>
@@ -179,9 +179,9 @@
 			<role-name>admin</role-name>
 			<role-name>shop</role-name>
 		</auth-constraint>
-		<user-data-constraint>
+		<!-- <user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
+		</user-data-constraint> -->
 	</security-constraint>
 
 	<security-constraint>
@@ -220,9 +220,9 @@
 			<role-name>admin</role-name>
 			<role-name>Moderators</role-name>
 		</auth-constraint>
-		<user-data-constraint>
+		<!-- <user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
+		</user-data-constraint> -->
 
 	</security-constraint>
 
@@ -236,9 +236,9 @@
 			<http-method>GET</http-method>
 			<http-method>POST</http-method>
 		</web-resource-collection>
-		<user-data-constraint>
+		<!-- <user-data-constraint>
 			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
+		</user-data-constraint> -->
 
 	</security-constraint>
 
@@ -270,9 +270,9 @@
 			<!-- Define the context-relative URL(s) to be protected -->
 			<url-pattern>/probe/*</url-pattern>
 			<!-- If you list http methods, only those methods are protected -->
-			<user-data-constraint>
+			<!-- <user-data-constraint>
 				<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-			</user-data-constraint>
+			</user-data-constraint> -->
 		</web-resource-collection>
 	</security-constraint>
 
@@ -296,7 +296,7 @@
 	</security-constraint>
 
 	<!-- Default login configuration uses form-based authentication -->
- 	<login-config>
+	<login-config>
 		<auth-method>FORM</auth-method>
 		<realm-name>Protected Area</realm-name>
 		<form-login-config>

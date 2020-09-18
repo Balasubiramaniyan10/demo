@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
+import org.apache.tomcat.dbcp.dbcp.BasicDataSource;
 
 import com.freewinesearcher.batch.sms.Sms;
 
@@ -283,9 +283,9 @@ public class ProblemSolver {
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
 		ds.setUsername("vpapp");
 		ds.setPassword("gyh(74%bbGSsw");
-		ds.setUrl("jdbc:mysql://localhost:3336/wijn?jdbcCompliantTruncation=false");
+		ds.setUrl("jdbc:mysql://localhost:3306/wijn?jdbcCompliantTruncation=false");
 		ds.setMaxIdle(150);
-		ds.setMaxWaitMillis(10000);
+		ds.setMaxWait(10000);
 		ds.setTestOnBorrow(true);
 		ds.setTimeBetweenEvictionRunsMillis(60000);
 		ds.setMinEvictableIdleTimeMillis(5 * 60 * 1000);

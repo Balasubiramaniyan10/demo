@@ -78,6 +78,7 @@ public class DataFeed implements Serializable {
 	public int maxlabels = 3;
 	public int skiplines = 0;
 	transient public String feed;
+	transient public String feedTo;
 	public String encoding;
 
 	public static enum formats {
@@ -296,6 +297,7 @@ public class DataFeed implements Serializable {
 								Page = new String(file, "UTF-8");
 							urlstatus = urlstatusses.OK;
 							feed = Page;
+							feedTo = Page;
 							guessFeedFormat(new Webpage());
 							if (feedstatus.equals(feedstatusses.OK)) {
 								if (format.equals(formats.CSV)) {
@@ -1115,7 +1117,7 @@ public class DataFeed implements Serializable {
 		try {
 			Row row;
 			feedContent = new FeedContent();
-			CSVReader reader = new CSVReader(new java.io.StringReader(feed), delimiter.charAt(0), quotechar, 0);
+			CSVReader reader = new CSVReader(new java.io.StringReader(feedTo), delimiter.charAt(0), quotechar, 0);
 			for (int i = 0; i < skiplines; i++)
 				reader.readNext();
 			for (String label : reader.readNext())

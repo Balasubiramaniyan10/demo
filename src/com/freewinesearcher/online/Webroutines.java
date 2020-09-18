@@ -1341,7 +1341,7 @@ public class Webroutines { // Some routines used in the web pages
 			if (rs.next() == false) { // Username not found; add it!
 				hash = Math.abs(username.concat(email).hashCode());
 				String query = "Insert into vp_users (username, password, email,role,valid) values ('"
-						+ username + "','" + password + "','" + email + "','user'," + 1 + ");";
+						+ username + "','" + password + "','" + email + "','admin'," + 1 + ");";
 				System.out.println("query...." + query);
 				i = stmt.executeUpdate(query);
 				if (i == 0) {

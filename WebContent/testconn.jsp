@@ -10,8 +10,8 @@
 		Class.forName("com.mysql.jdbc.Driver");
 		out.println("creating database connection............ jdbc:mysql://172.20.20.2:3306/wijn");
 		
-		//conn = DriverManager.getConnection("jdbc:mysql://172.20.20.2:3336/wijn", "vpapp", "gyh(74%bbGSsw");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3336/wijn", "vpapp", "gyh(74%bbGSsw");
+		//conn = DriverManager.getConnection("jdbc:mysql://172.20.20.2:3306/wijn", "vpapp", "gyh(74%bbGSsw");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/wijn", "vpapp", "gyh(74%bbGSsw");
 		
 		out.println("creating statement............ ");
 		stmt = conn.createStatement();
